@@ -1,7 +1,8 @@
 import tmdb_api
+import json
 
 
-if __name__ == '__main__':
+def download_most_popular_movies():
     data_movies = []
     films_number = 1000
     current_page = 1
@@ -16,8 +17,13 @@ if __name__ == '__main__':
         )
         data_movies += response['results']
         current_page += 1
-
-    with open('data_movies_text', 'w', encoding='utf-8') as file:
-        file.write(str(data_movies))
+    return data_movies
 
 
+if __name__ == '__main__':
+    movie_list_file = open('movies_base', 'w', encoding='utf-8')
+    json.dump(
+        download_most_popular_movies(),
+        movie_list_file,
+    )
+    movie_list_file.close()

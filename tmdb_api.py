@@ -25,5 +25,7 @@ def make_tmdb_api_request(method, api_key, extra_params=None):
 
 
 if __name__ == '__main__':
-    response = make_tmdb_api_request(method='/movie/215', api_key=API_KEY)
+    response = make_tmdb_api_request(
+        method='/movie/215', api_key=API_KEY
+    )['budget']
     print(response)
