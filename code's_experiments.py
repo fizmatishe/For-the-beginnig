@@ -7,12 +7,12 @@
 #     for i, name in zip(names, number):
 #         print(i, name)
 #     A = dict(zip(["Russia", "UK", "USA"],["MSC", "KIV", "WNG"]))
-    # a = '{}://{}/{}'.format(
-    #     'https',
-    #     'google.com',
-    #     'search'
-    # )
-    # print(a)
+a = '{}://{}/{}'.format(
+    'https',
+    'google.com',
+    'search'
+)
+print(a)
 s = [{"A": "B"}, {"c": "d"}]
 for iterate_list in s:
     print(s)

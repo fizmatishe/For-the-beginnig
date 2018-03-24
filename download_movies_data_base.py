@@ -1,5 +1,6 @@
 import tmdb_api
 import json
+import urllib.request
 
 
 def download_most_popular_movies():
@@ -22,8 +23,15 @@ def download_most_popular_movies():
 
 if __name__ == '__main__':
     movie_list_file = open('movies_base', 'w', encoding='utf-8')
-    json.dump(
-        download_most_popular_movies(),
-        movie_list_file,
-    )
-    movie_list_file.close()
+    try:
+        json.dump(
+            download_most_popular_movies(),
+            movie_list_file,
+        )
+    except urllib.error.URLError:
+        print('Something wrong with connection')
+    finally:
+        movie_list_file.close()
+        print('File "movies_base" closed')
+
+
