@@ -33,5 +33,3 @@ if __name__ == '__main__':
     finally:
         movie_list_file.close()
         print('File "movies_base" closed')
-
-
